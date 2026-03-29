@@ -1,0 +1,6 @@
+{
+    "idf.currentSetup": "D:/Esp/Espressif/frameworks/esp-idf-v5.5.3/",
+    "idf.flashType": "UART",
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda"
+}
