@@ -67,7 +67,15 @@ class SoftmaxWithLoss:
     def forward(self,x,t):
         self.t=t
         self.y=self.softmax(x)
+        #softmax函数的输出 self.y 是一个概率分布，表示每个类别的预测概率。交叉熵误差函数会
+        # 比较这个预测概率分布 self.y 和真实标签 t 之间的差异，计算出一个数值来表示这个差异程度，
+        # 这个数值就是损失（loss）。因此，self.loss 就是通过交叉熵误差函数计算出来的损失值，
+        # 它反映了模型在当前输入 x 上的预测与真实标签 t 之间的差距。
         self.loss=self.cross_entropy_error(self.y,self.t)
+        #cross_entropy_error 函数的作用是计算交叉熵误差（cross-entropy error），
+        # 它是一个常用的损失函数，特别适用于分类问题。这个函数会比较模型的预测概率分布 self.y 和真实标签 t 之间的差异，
+        # 并返回一个数值来表示这个差异程度，这个数值就是损失（loss）。因此，self.loss 就是
+        # 通过 cross_entropy_error 函数计算出来的损失值，它反映了模型在当前输入 x 上的预测与真实标签 t 之间的差距。
         return self.loss
 
     def backward(self,dout=1):
